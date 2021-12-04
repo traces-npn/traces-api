@@ -15,12 +15,6 @@ create table if not exists points (
 	geodata jsonb
 );	
 
-*/
-
-  
-
-  
- /*
   INSERT INTO points (geodata) VALUES ('{
     "type":"Feature",
     "geometry": {
