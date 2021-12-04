@@ -14,7 +14,7 @@ app.use(
 )
 
 app.get('/', (request, response) => {
-  response.json({ info: 'Node.js, Express, and Postgres API' })
+  response.json({ info: 'Traces API - Base de dades PostgreSQL' })
 })
 
 app.get('/users', dbr.getUsers)
