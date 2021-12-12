@@ -37,9 +37,10 @@ const setPunt = (request, response) => {
   ///const geojson = request.body
   ///const device_id = 9
   const  { device_id, geojson }  = request.body
-  //console.log(geojson)
+  //console.log(device_id + ":"+JSON.stringify(geojson))
   pool.query('INSERT INTO points (device_id, geodata) VALUES ($1, $2)', [device_id, geojson], (error, results) => {
     if (error) {
+      
       throw error
     } //response.status(201).send();
     //response.status(201).send(`Punt afegit: ${device_id} ${ JSON.stringify(geojson)}`)    
@@ -48,10 +49,8 @@ const setPunt = (request, response) => {
 }
 
 const getTrackbyDeviceId = (request, response) => {
-  const device_id = parseInt(request.params.id)
-  const query="SELECT geodata->'geometry'->'coordinates' AS coords, geodata->'properties'->'time' AS temps, geodata->'properties'->'alt' AS alt FROM points where device_id=$1 order by temps asc";
-  //console.log(device_id)
-  //pool.query("SELECT id, device_id, geodata ->'geometry'->'coordinates' AS coords, geodata->'properties'->'time' AS temps FROM points where device_id=$1", [device_id], (error, results) => {
+  const device_id = parseInt(request.params.id)  
+  const query="SELECT geodata->'geometry'->'coordinates' AS coords, geodata->'properties'->'time' AS temps, geodata->'properties'->'alt' AS alt FROM points where device_id=$1 order by temps asc";  
   pool.query(query, [device_id], (error, results) => {    
     if (error) {
       throw error
@@ -62,8 +61,6 @@ const getTrackbyDeviceId = (request, response) => {
 
 const getTracks = (request, response) => {
   const query="SELECT id, device_id, geodata ->'geometry'->'coordinates' AS coords, geodata->'properties'->'time' AS temps, geodata->'properties'->'alt' AS alt FROM points order by device_id, temps asc";  
-    //pool.query("SELECT id, device_id, geodata ->'geometry'->'coordinates' AS coords, geodata->'properties'->'time' AS temps FROM points", (error, results) => {
-  //pool.query("SELECT geodata->'geometry'->'coordinates' AS coords, geodata->'properties'->'time' AS temps FROM points", (error, results) => {
     pool.query(query, (error, results) => {    
     if (error) {
       throw error
