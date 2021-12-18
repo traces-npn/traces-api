@@ -1,5 +1,16 @@
 const Pool = require('pg').Pool
+const config = require('../config.js');
 
+const pool = new Pool({
+  user: config.USER,
+  host: config.LOCALHOST,
+  database: config.DATABASE,
+  password: config.PASSWORD,
+  port: config.PORT,
+})
+
+
+/*
 const pool = new Pool({
   user: 'traces',
   host: 'localhost',
@@ -7,6 +18,7 @@ const pool = new Pool({
   password: 'traces',
   port: 5432,
 })
+*/
 
 /*
 create table if not exists points (    	
@@ -45,6 +57,7 @@ const setPunt = (request, response) => {
     } //response.status(201).send();
     //response.status(201).send(`Punt afegit: ${device_id} ${ JSON.stringify(geojson)}`)    
     response.status(201)
+    
   })
 }
 

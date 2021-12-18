@@ -1,11 +1,12 @@
 const Pool = require('pg').Pool
+const config = require('../config.js');
 
 const pool = new Pool({
-  user: 'traces',
-  host: 'localhost',
-  database: 'traces',
-  password: 'traces',
-  port: 5432,
+  user: config.USER,
+  host: config.LOCALHOST,
+  database: config.DATABASE,
+  password: config.PASSWORD,
+  port: config.PORT,
 })
 
 const getUsers = (request, response) => {
