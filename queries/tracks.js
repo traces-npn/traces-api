@@ -9,42 +9,6 @@ const pool = new Pool({
   port: config.PORT,
 })
 
-
-/*
-const pool = new Pool({
-  user: 'traces',
-  host: 'localhost',
-  database: 'traces',
-  password: 'traces',
-  port: 5432,
-})
-*/
-
-/*
-create table if not exists points (    	
-	id bigserial NOT NULL,
-   	device_id integer,	
-	geodata jsonb
-);	
-
-  INSERT INTO points (geodata) VALUES ('{
-    "type":"Feature",
-    "geometry": {
-      "type":"Point","coordinates":[2.1222648,42.3862,2900]},
-    "properties":{
-      "id":9,
-      "time":"2021-11-17T22:34:16.000+00:00"
-    }
-}');									 
-
-select * from points
-SELECT geodata->'properties' AS props FROM points;
-SELECT geodata->'properties'->'time' AS props FROM points;
-SELECT geodata->'properties'->'id' AS props FROM points;
-SELECT geodata->'geometry'->'coordinates' AS coords FROM points;
-  */  
-
-
 const setPunt = (request, response) => {  
   ///const geojson = request.body
   ///const device_id = 9
@@ -82,8 +46,20 @@ const getTracks = (request, response) => {
   })
 }
 
+
+const getDevicesTracks = (request, response) => {
+  const query="select distinct device_id from points";
+  pool.query(query, (error, results) => {    
+    if (error) {
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+}
+
 module.exports = {
   setPunt,
   getTrackbyDeviceId,
+  getDevicesTracks,
   getTracks
 }
