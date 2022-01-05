@@ -1,6 +1,24 @@
 # traces-api
-
+Aplicació API REST del projecte Traces
 API amb operacions CRUD a la base de dades PostgreSQL
+
+*Traces. Seguiment de curses d’esquí de muntanya en línia.**
+
+Màster Universitari en Enginyeria Informàtica
+TFM - Àrea  de Serveis basats en localització i espais intel·ligents
+Universitat Oberta de Catalunya
+
+**Autor:** Jaume Casanovas Coma
+
+**Directora del TFM**: Anna Muñoz Bollas
+
+**Professor responsable de l’assignatura**: Antoni Pérez Navarro
+
+
+Gener de 2022
+
+
+**Execució**
 
 Exuctar amb:
 node src/index.js
@@ -24,3 +42,4 @@ http://localhost:3001/tracks/1
 Matar processos oberts
 lsof -i tcp:3001
 kill -9 <PID>
+
