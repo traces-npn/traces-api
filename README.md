@@ -19,18 +19,11 @@ Gener de 2022
 
 **Condicions prèvies**
 
-Abans d'executar el codi de Traces Api, cal seguir els passos 
-d'instal·lació i creació de les taules de la base de dades PostgreSQL
-indicats a la memòria del projecte fent ús dels scripts de la carpeta /sql
+Abans d'executar el codi de Traces Api, cal seguir els passos d'instal·lació de la base de dades PostgreSQL i creació de les taules indicats als annexos 5 i 6 de  la memòria del projecte fent ús dels scripts de la carpeta /sql
 
 **Execució**
 
-Exuctar amb:
-node src/index.js
-
-o 
-
-npm start
+Exuctar amb:  node src/index.js o npm start
 
 **Accedir a localhost:3001**
 
