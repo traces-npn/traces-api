@@ -17,6 +17,10 @@ Universitat Oberta de Catalunya
 
 Gener de 2022
 
+**Condicions prèvies**
+Abans d'executar el codi de Traces Api, cal seguir els passos 
+d'instal·lació i creació de les taules de la base de dades PostgreSQL
+indicats a la memòria del projecte fent ús dels scripts de la carpeta /sql
 
 **Execució**
 
@@ -27,19 +31,26 @@ o
 
 npm start
 
-Accedir a localhost:3001
+**Accedir a localhost:3001**
+
 http://localhost:3001/users/
+
 http://localhost:3001/users/[id usuari]
+
 http://localhost:3001/users/1
+
 ...
 
 http://localhost:3001/tracks/
+
 http://localhost:3001/tracks/[id track]
+
 http://localhost:3001/tracks/1
+
 ...
 
 
-Matar processos oberts
+**Matar processos oberts**
 lsof -i tcp:3001
 kill -9 <PID>
 
