@@ -2,7 +2,7 @@
 Aplicació API REST del projecte Traces
 API amb operacions CRUD a la base de dades PostgreSQL
 
-*Traces. Seguiment de curses d’esquí de muntanya en línia.**
+*Traces. Seguiment de curses d’esquí de muntanya en línia.*
 
 Màster Universitari en Enginyeria Informàtica
 TFM - Àrea  de Serveis basats en localització i espais intel·ligents
