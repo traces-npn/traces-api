@@ -18,6 +18,7 @@ Universitat Oberta de Catalunya
 Gener de 2022
 
 **Condicions prèvies**
+
 Abans d'executar el codi de Traces Api, cal seguir els passos 
 d'instal·lació i creació de les taules de la base de dades PostgreSQL
 indicats a la memòria del projecte fent ús dels scripts de la carpeta /sql
